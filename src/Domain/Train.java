@@ -7,8 +7,30 @@ import java.util.ArrayList;
  */
 public class Train {
 
-    private String id;
+    private String name;
     private ArrayList<Wagon> aangesloten = new ArrayList<Wagon>();
 
+    public Train(String name) {
+        this.name = name;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Wagon> getConnected() {
+        return aangesloten;
+    }
+
+    public void addWagon(Wagon wagon) {
+        aangesloten.add(wagon);
+    }
+
+    public void removeWagon(Wagon wagon) {
+        aangesloten.remove(wagon);
+    }
+
+    public String toString() {
+        return "Train " + name;
+    }
 }
