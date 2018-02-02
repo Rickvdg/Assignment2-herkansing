@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by Rick on 1-2-2018.
  */
-public class Collection {
+public class Station {
 
     private static ArrayList<Train> trains;
     private static ArrayList<Wagon> wagons;

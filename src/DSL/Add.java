@@ -1,6 +1,6 @@
 package DSL;
 
-import Domain.Collection;
+import Domain.Station;
 import Domain.Train;
 import Domain.Wagon;
 
@@ -16,8 +16,8 @@ public class Add implements ICommand {
         String wagonName = input.get(1);
         String trainName = input.get(3);
 
-        Train tr = Collection.getTrainbyName(trainName);
-        Wagon wg = Collection.getWagonByName(wagonName);
+        Train tr = Station.getTrainbyName(trainName);
+        Wagon wg = Station.getWagonByName(wagonName);
 
         return null;
     }
