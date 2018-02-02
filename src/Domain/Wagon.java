@@ -26,6 +26,17 @@ public class Wagon {
         return seats;
     }
 
+    public boolean equals(Object object) {
+        if (object.getClass() == getClass()) {
+            Wagon wagon = (Wagon) object;
+            if (wagon.name.equals(name) && wagon.seats == seats) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
     public String toString() {
         return "Wagon " + name + " met " + seats + " plekken";
     }

@@ -30,6 +30,17 @@ public class Train {
         aangesloten.remove(wagon);
     }
 
+    public boolean equals(Object object) {
+        if (object.getClass() == getClass()) {
+            Train train = (Train) object;
+            if (train.name.equals(name)) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
     public String toString() {
         return "Train " + name;
     }

@@ -1,5 +1,6 @@
 package DSL;
 
+import Controller.CommandChecker;
 import Domain.Station;
 import Domain.Train;
 import Domain.Wagon;
@@ -19,7 +20,15 @@ public class Add implements ICommand {
         Train tr = Station.getTrainbyName(trainName);
         Wagon wg = Station.getWagonByName(wagonName);
 
-        return null;
+
+        if (tr != null && wg != null) {
+            tr.addWagon(wg);
+            return String.format("Wagon %s toegevoegd aan trein %s", wagonName, trainName);
+        } else {
+            return String.format("Train or wagon nog found");
+        }
+
+        //return null;
     }
 
 }

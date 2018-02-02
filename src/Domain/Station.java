@@ -10,6 +10,14 @@ public class Station {
     private static ArrayList<Train> trains;
     private static ArrayList<Wagon> wagons;
 
+    public static ArrayList<Train> getTrains() {
+        return trains;
+    }
+
+    public static ArrayList<Wagon> getWagons() {
+        return wagons;
+    }
+
     public static void addTrain(Train train) {
         trains.add(train);
     }
