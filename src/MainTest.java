@@ -1,4 +1,5 @@
 import DSL.Add;
+import DSL.Delete;
 import DSL.New;
 import DSL.Remove;
 
@@ -12,6 +13,7 @@ public class MainTest {
         New n = new New();
         Add a = new Add();
         Remove r = new Remove();
+        Delete d = new Delete();
 
         System.out.println(n.interpret(stringToList("new train tr1")));
         System.out.println(n.interpret(stringToList("new train tr1")));
@@ -31,6 +33,12 @@ public class MainTest {
         System.out.println(r.interpret(stringToList("remove wg1 to tr1")));
         System.out.println(r.interpret(stringToList("remove wg1 from tr1")));
         System.out.println(r.interpret(stringToList("remove wg1 from tr1")));
+        System.out.println(" "); // ---------------------------------------
+        System.out.println(d.interpret(stringToList("delete train tr1")));
+        System.out.println(d.interpret(stringToList("delete train tr1")));
+        System.out.println(d.interpret(stringToList("delete wagon wg1")));
+        System.out.println(d.interpret(stringToList("delete wagon wg1")));
+        System.out.println(d.interpret(stringToList("delete wg1 tr1")));
     }
 
     private static ArrayList<String> stringToList(String s) {
