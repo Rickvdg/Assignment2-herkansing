@@ -29,7 +29,7 @@ public class Wagon {
     public boolean equals(Object object) {
         if (object.getClass() == getClass()) {
             Wagon wagon = (Wagon) object;
-            if (wagon.name.equals(name) && wagon.seats == seats) {
+            if (wagon.name.equals(name)) {
                 return true;
             }
             return false;

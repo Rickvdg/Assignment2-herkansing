@@ -14,6 +14,14 @@ public class Add implements ICommand {
 
     @Override
     public String interpret(ArrayList<String> input) {
+
+        boolean notEnoughWords = !(input.size() >= 4);
+        boolean middlewordCheck = !input.get(2).equals("to");
+
+        if (notEnoughWords || middlewordCheck) {
+            return "Invalid command";
+        }
+
         String wagonName = input.get(1);
         String trainName = input.get(3);
 

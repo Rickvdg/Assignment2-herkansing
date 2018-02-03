@@ -21,14 +21,38 @@ public class CommandChecker {
     }
 
     public static boolean exists(Object object) {
-        if (object.getClass() == Train.class) {
+        if (object.getClass() == Train.class && Station.getTrains().size() > 0) {
             for (Train tr : Station.getTrains()) {
                 if (tr.equals(object)) {
                     return true;
                 }
             }
             return false;
-        } else if (object.getClass() == Wagon.class) {
+        } else if (object.getClass() == Wagon.class && Station.getWagons().size() > 0) {
+            for (Wagon wg : Station.getWagons()) {
+                if (wg.equals(object)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public static boolean existsTrain(Train object) {
+        if (Station.getTrains().size() > 0) {
+            for (Train tr : Station.getTrains()) {
+                if (tr.equals(object)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public static boolean existsWagon(Wagon object) {
+        if (Station.getWagons().size() > 0) {
             for (Wagon wg : Station.getWagons()) {
                 if (wg.equals(object)) {
                     return true;

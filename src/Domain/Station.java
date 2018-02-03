@@ -7,8 +7,8 @@ import java.util.ArrayList;
  */
 public class Station {
 
-    private static ArrayList<Train> trains;
-    private static ArrayList<Wagon> wagons;
+    private static ArrayList<Train> trains = new ArrayList<Train>();
+    private static ArrayList<Wagon> wagons = new ArrayList<Wagon>();
 
     public static ArrayList<Train> getTrains() {
         return trains;
