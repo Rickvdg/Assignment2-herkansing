@@ -30,6 +30,16 @@ public class Train {
         aangesloten.remove(wagon);
     }
 
+    public int getSeats() {
+        int seats = 0;
+        if (aangesloten.size() > 0) {
+            for (Wagon wagon : aangesloten) {
+                seats += wagon.getSeats();
+            }
+        }
+        return seats;
+    }
+
     public boolean equals(Object object) {
         if (object.getClass() == getClass()) {
             Train train = (Train) object;
@@ -42,6 +52,6 @@ public class Train {
     }
 
     public String toString() {
-        return "Train " + name;
+        return "Train '" + name + "'";
     }
 }

@@ -45,7 +45,6 @@ public class MainTest {
         ArrayList<String> output = new ArrayList<String>();
         for (String string : s.split(" ")) {
             output.add(string);
-//            System.out.print(s+" ");
         }
         return output;
     }

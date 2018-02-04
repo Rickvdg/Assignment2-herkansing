@@ -20,7 +20,7 @@ public class New implements ICommand {
             return "Invalid command";
         }
 
-        String type = input.get(1);
+        String type = input.get(1).toLowerCase();
         String name = input.get(2);
 
         if (!CommandChecker.nameCheck(name)) {

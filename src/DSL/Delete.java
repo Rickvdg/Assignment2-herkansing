@@ -20,11 +20,12 @@ public class Delete implements ICommand {
             return "Invalid command";
         }
 
+        String type = input.get(1).toLowerCase();
         String name = input.get(2);
 
-        if (input.get(1).equals("train")) {
+        if (type.equals("train")) {
             return deleteTrain(name);
-        } else if (input.get(1).equals("wagon")) {
+        } else if (type.equals("wagon")) {
             return deleteWagon(name);
         } else {
             return String.format("Invalid type '%s'", input.get(1));

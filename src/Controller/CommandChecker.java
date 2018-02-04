@@ -8,11 +8,6 @@ import java.util.ArrayList;
 
 public class CommandChecker {
 
-    public static boolean wordCheck(ArrayList<String> words, int index, String wordToCompareTo) {
-        String wordToCompare = words.get(index);
-        return (wordToCompare.equals(wordToCompareTo));
-    }
-
     public static boolean nameCheck(String name) {
         if (name.matches("[a-z]{1}[a-z0-9]{0,}")) {
             return true;

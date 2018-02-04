@@ -15,7 +15,7 @@ public class Remove implements ICommand {
     @Override
     public String interpret(ArrayList<String> input) {
         boolean notEnoughWords = !(input.size() >= 4);
-        boolean middlewordCheck = !input.get(2).equals("from");
+        boolean middlewordCheck = !input.get(2).toLowerCase().equals("from");
 
         if (notEnoughWords || middlewordCheck) {
             return "Invalid command";

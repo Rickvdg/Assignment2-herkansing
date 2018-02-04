@@ -38,6 +38,6 @@ public class Wagon {
     }
 
     public String toString() {
-        return "Wagon " + name + " met " + seats + " plekken";
+        return "Wagon '" + name + "' with " + seats + " seats";
     }
 }

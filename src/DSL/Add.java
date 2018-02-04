@@ -16,7 +16,7 @@ public class Add implements ICommand {
     public String interpret(ArrayList<String> input) {
 
         boolean notEnoughWords = !(input.size() >= 4);
-        boolean middlewordCheck = !input.get(2).equals("to");
+        boolean middlewordCheck = !input.get(2).toLowerCase().equals("to");
 
         if (notEnoughWords || middlewordCheck) {
             return "Invalid command";
@@ -33,7 +33,7 @@ public class Add implements ICommand {
             tr.addWagon(wg);
             return String.format("Wagon %s toegevoegd aan trein %s", wagonName, trainName);
         } else {
-            return String.format("Train or wagon nog found");
+            return String.format("Train or wagon not found");
         }
 
         //return null;
