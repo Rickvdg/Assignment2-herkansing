@@ -1,3 +1,4 @@
+import Controller.CommandExecuter;
 import DSL.Add;
 import DSL.Delete;
 import DSL.New;
@@ -10,42 +11,42 @@ import java.util.ArrayList;
  */
 public class MainTest {
     public static void main(String[] args) {
-        New n = new New();
-        Add a = new Add();
-        Remove r = new Remove();
-        Delete d = new Delete();
+        CommandExecuter ce = new CommandExecuter();
 
-        System.out.println(n.interpret(stringToList("new train tr1")));
-        System.out.println(n.interpret(stringToList("new train tr1")));
-        System.out.println(n.interpret(stringToList("new train")));
-        System.out.println(n.interpret(stringToList("new wagon wg1")));
-        System.out.println(n.interpret(stringToList("new wagon wg1")));
-        System.out.println(n.interpret(stringToList("new wagon wg2 2")));
-        System.out.println(n.interpret(stringToList("new wagon")));
-        System.out.println(n.interpret(stringToList("new iets")));
-        System.out.println(n.interpret(stringToList("new wagon $#$%")));
-        System.out.println(" "); // ---------------------------------------
-        System.out.println(a.interpret(stringToList("add wg1 to tr1")));
-        System.out.println(a.interpret(stringToList("add tr1 to wg1")));
-        System.out.println(a.interpret(stringToList("add wg1 to tr1 dhdasjkhdajk")));
-        System.out.println(" "); // ---------------------------------------
-        System.out.println(r.interpret(stringToList("remove wg1 from tr1")));
-        System.out.println(r.interpret(stringToList("remove wg1 to tr1")));
-        System.out.println(r.interpret(stringToList("remove wg1 from tr1")));
-        System.out.println(r.interpret(stringToList("remove wg1 from tr1")));
-        System.out.println(" "); // ---------------------------------------
-        System.out.println(d.interpret(stringToList("delete train tr1")));
-        System.out.println(d.interpret(stringToList("delete train tr1")));
-        System.out.println(d.interpret(stringToList("delete wagon wg1")));
-        System.out.println(d.interpret(stringToList("delete wagon wg1")));
-        System.out.println(d.interpret(stringToList("delete wg1 tr1")));
+        print(ce.execute("new train tr1"));
+        print(ce.execute("new train tr1"));
+        print(ce.execute("new train tr3"));
+        print(ce.execute("new train"));
+        print(ce.execute("new wagon wg1"));
+        print(ce.execute("new wagon wg1"));
+        print(ce.execute("new wagon wg2 2"));
+        print(ce.execute("new wagon"));
+        print(ce.execute("new iets"));
+        print(ce.execute("new wagon $#$%"));
+        print(" "); // --------------------------
+        print(ce.execute("add wg1 to tr1"));
+        print(ce.execute("add wg2 to tr1"));
+        print(ce.execute("add tr1 to wg1"));
+        print(ce.execute("add wg1 to tr1 dhdasjkhdajk"));
+        print(" "); // --------------------------
+        print(ce.execute("getnumseats train tr1"));
+        print(ce.execute("getnUmSeAtS WaGoN wg2"));
+        print(" "); // --------------------------
+        print(ce.execute("remove wg1 from tr1"));
+        print(ce.execute("remove wg1 to tr1"));
+        print(ce.execute("remove wg1 from tr1"));
+        print(ce.execute("remove wg1 from tr1"));
+        print(" "); // --------------------------
+        print(ce.execute("delete train tr1"));
+        print(ce.execute("delete train tr1"));
+        print(ce.execute("delete wagon wg1"));
+        print(ce.execute("delete wagon wg1"));
+        print(ce.execute("delete wg1 tr1"));
+        print(" "); // --------------------------
+
     }
 
-    private static ArrayList<String> stringToList(String s) {
-        ArrayList<String> output = new ArrayList<String>();
-        for (String string : s.split(" ")) {
-            output.add(string);
-        }
-        return output;
+    private static void print(String input) {
+        System.out.println(input);
     }
 }

@@ -35,7 +35,7 @@ public class Get implements ICommand {
 
     private String getTrain(String name) {
         Train train = Station.getTrainbyName(name);
-        if (train != null) return String.format("%s with $d seats", train.toString(), train.getSeats());
+        if (train != null) return String.format("%s with %d seats", train.toString(), train.getSeats());
         return String.format("Train '%s' doesn't exist");
     }
 

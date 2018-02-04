@@ -25,7 +25,7 @@ public class CommandExecuter {
                 commandType = new Delete();
                 break;
             case "remove":
-                commandType = new Delete();
+                commandType = new Remove();
                 break;
             default:
                 return String.format("Invalid command '%s'", commandString);
