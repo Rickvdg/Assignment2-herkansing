@@ -18,7 +18,7 @@ public class Train {
         return name;
     }
 
-    public ArrayList<Wagon> getConnected() {
+    public ArrayList<Wagon> getAangesloten() {
         return aangesloten;
     }
 
@@ -49,6 +49,14 @@ public class Train {
             return false;
         }
         return false;
+    }
+
+    public String getTrainInfo() {
+        String trainInformation = "(" + name + ")";
+        for (Wagon wagon : aangesloten) {
+            trainInformation = trainInformation + "-(" + wagon.getName() + ")";
+        }
+        return trainInformation;
     }
 
     public String toString() {

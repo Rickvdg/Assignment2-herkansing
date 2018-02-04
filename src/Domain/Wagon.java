@@ -37,6 +37,10 @@ public class Wagon {
         return false;
     }
 
+    public String getWagonInfo() {
+        return "(" + name + " : " + seats + ")";
+    }
+
     public String toString() {
         return "Wagon '" + name + "' with " + seats + " seats";
     }

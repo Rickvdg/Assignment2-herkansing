@@ -14,6 +14,7 @@ public class Station {
         return trains;
     }
 
+
     public static ArrayList<Wagon> getWagons() {
         return wagons;
     }

@@ -28,7 +28,7 @@ public class Remove implements ICommand {
             return "Wagon or train nog found";
         }
 
-        if (train.getConnected().contains(wagon)) {
+        if (train.getAangesloten().contains(wagon)) {
             train.removeWagon(wagon);
             return String.format("Wagon '%s' removed from train '%s'", wagon.getName(), train.getName());
         } else {
